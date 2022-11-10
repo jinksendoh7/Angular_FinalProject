@@ -36,12 +36,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  font-family: 'VW Head Regular';
+  font-family: 'VW Head Bold';
   margin: 0rem;
-  color: #fdfaf9 !important;
+  color: #6091C3 !important;
   background-color: #1f2f57 !important;
-  margin: -1rem -.5rem 0rem -.5rem;
-  width: 105%;
+  width: 100%;
 }
 .company-logo{
   width: 2rem;
@@ -58,9 +57,7 @@ mat-toolbar-row, .mat-toolbar-single-row {
   padding: 1rem !important;
   justify-content: space-between !important;
   color:  #1f2f57 !important;
-  background-color: #fdfaf9 !important;
-  margin: -.5rem -.5rem 1rem -.5rem;
-  width: 105%;
+  background-color: #fff !important;
   font-family: 'VW Head Bold';
   font-size: 1.25rem;
 
@@ -73,7 +70,12 @@ mat-toolbar-row, .mat-toolbar-single-row {
 }
 mat-toolbar{
   background-color: #fdfaf9 !important;
-  border: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  width: 100%;
+  top:0;
+  position: fixed;
+  margin-left: -.5rem;
+  height: 7rem;
 }
 @media (min-width: 600px) {
   mat-toolbar-row, .mat-toolbar-single-row {
@@ -83,7 +85,7 @@ mat-toolbar{
     margin: 2rem 15%;
   }
   .topbar{
-    padding: .5rem 15%;
+    padding: 0 15%;
   }
   .cart-label{
     display:inline-block;
