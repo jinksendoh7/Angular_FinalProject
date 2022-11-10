@@ -63,7 +63,7 @@ mat-toolbar-row, .mat-toolbar-single-row {
 
 }
 .container{
-  margin: 1rem .5rem;
+  margin: 8rem .5rem;
 }
 .cart-label{
   display:none;
@@ -82,7 +82,7 @@ mat-toolbar{
     padding: 0 15% !important;
   }
   .container{
-    margin: 2rem 15%;
+    margin: 8rem 15%;
   }
   .topbar{
     padding: 0 15%;
