@@ -1,0 +1,78 @@
+
+<mat-toolbar>
+<mat-toolbar-row class="topbar">
+    <span class="">
+      <img src="../assets/images/vw-logo.png" alt="company Logo" class="company-logo">
+    </span>
+    <span class="company">Volkswagen</span>
+    <span class="spacer"></span>
+</mat-toolbar-row>
+<mat-toolbar-row>
+  <div>
+    <img src="../assets/images/VW_Collections_Logo.gif" alt="store Logo" class="logo">
+  </div>
+  <span class="spacer"></span>
+  <button
+    *ngIf="authService.isLoggedIn"
+    class="button"
+    mat-icon-button
+    class="icon"
+    aria-label="Shopping Cart Icon"
+    routerLink="cart"
+    class="cart"
+  >
+  <span class="cart-label">Shopping Cart</span>
+    <mat-icon matBadge="{{ itemCount }}" matBadgeColor="warn" style="padding-top: .25rem"
+      >shopping_cart
+    </mat-icon>
+    </button>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor] ="menu"
+    aria-label="More Options"
+    class="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu
+    #menu="matMenu">
+    <!-- Private routes -->
+    <div *ngIf="authService.isLoggedIn">
+      <a mat-menu-item routerLink="dashboard">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <a mat-menu-item routerLink="products">
+        <mat-icon>forest</mat-icon>
+        <span>Products</span>
+      </a>
+      <a *ngIf="authService.isLoggedIn" mat-menu-item routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Cart</span>
+      </a>
+      <a *ngIf="authService.isLoggedIn" mat-menu-item (click)="authService.SignOut">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </a>
+    </div>
+    <!-- Non authenticated routes -->
+    <div *ngIf="!authService.isLoggedIn">
+      <a mat-menu-item routerLink="sign-in">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+      </a>
+      <a mat-menu-item routerLink="register-user">
+        <mat-icon>face</mat-icon>
+        <span>Sign-up</span>
+      </a>
+      <a mat-menu-item routerLink="forgot-password">
+        <mat-icon>password</mat-icon>
+        <span>Forgot Password</span>
+      </a>
+    </div>
+
+  </mat-menu>
+</mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'VW Head Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VW Head Regular'), url('./assets/fonts/VWHeadRegular.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'VW Head Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VW Head Bold'), url('./assets/fonts/VWHeadBold.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'VW Text Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VW Text Regular'), url('./assets/fonts/VWTextRegular.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'VW Text Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VW Text Bold'), url('./assets/fonts/VWTextBold.woff') format('woff');
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body{
+  margin: 0 !important;
+  display:flex !important;
+  color:  #1f2f57;
+  font-family: 'VW Text Regular'
+}
