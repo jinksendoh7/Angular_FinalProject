@@ -17,14 +17,15 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
-// Auth service
-import { AuthService } from "./shared/services/auth.service";
-import { AuthGuard } from './shared/guard/auth.guard';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
 import { ProductItemComponent } from './components/products/product-item/product-item.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart/shopping-cart.component';
+
+// Auth service
+import { AuthService } from "./shared/services/auth.service";
+import { AuthGuard } from './shared/guard/auth.guard';
+
 
 // Material Library
 import { MatCardModule } from '@angular/material/card';
@@ -37,6 +38,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatRippleModule} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ProductDetailsComponent,
     ProductItemComponent,
     ShoppingCartComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatChipsModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
@@ -69,6 +73,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatRippleModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+
   ],
   providers: [AuthService, AuthGuard, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]

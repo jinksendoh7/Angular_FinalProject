@@ -14,7 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   products: Product[] = [];
   product: Product | null | undefined = null;
   argument2: any;
-
+  isLoading: boolean = false;
   constructor(
     private _productsService: ProductsService,
     private _cartService: CartService,
@@ -27,12 +27,19 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
     const routeParams = this._route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('productId'));
+    const productIdFromRoute = routeParams.get('productId');
     this.argument2 = routeParams.get('argument2');
+    this.isLoading = true;
+    setTimeout(()=>{
+      this._productsService.getProducts().subscribe((products) => {
+        this.products = products
+        this.product = this.products.find(
+          (product) => product.id === productIdFromRoute
+        );
+          this.isLoading = false;
+      });
 
-    this._productsService.getProducts().subscribe((products) => this.products = products);
-    this.product = this.products.find(
-      (product) => product.id === productIdFromRoute
-    );
+    }, 2000)
+
   }
 }

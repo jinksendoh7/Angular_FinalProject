@@ -1,9 +1,10 @@
-<div class="card-item" *ngIf="product"  matRipple>
+<div class="card-item" *ngIf="product"  matRipple    >
   <img src="{{product.pictureUrl }}"  mat-card-image class="card-item-image">
-  <div class="card-item-title">{{product.name}}</div>
+  <div class="card-item-title" >{{product.name}}</div>
   <div class="card-item-sub">
     <span class="card-item-price">{{product.price | currency}}</span>
     <span class="card-item-shipping-cost">+ Shipping Cost</span>
   </div>
-  <button class="card-item-button">Add to Cart</button>
+  <button class="card-item-button" (click)="addToCart(product)">Add to Cart</button>
+  <button class="card-item-view" [routerLink]="['/products', product.id, product.quantity]">View Detail</button>
 </div>
