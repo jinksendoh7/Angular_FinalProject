@@ -3,6 +3,47 @@
   margin: 0 auto;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15.75rem, 1fr));
+
+}
+
+.cards-nav-filter{
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+.card-filter-item{
+  border: 1.5px solid   #6091C3;
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin: .25rem;
+  border-radius: 10px;
+  min-width: 100px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.card-filter-item:hover, .card-filter-item-active{
+  border: 1.5px solid   #6091C3;
+  background-color:  #6091C3;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: .25rem;
+  border-radius: 10px;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+
+.spinner{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 8rem auto;
+}
+
+@media (min-width: 600px) {
 
 }

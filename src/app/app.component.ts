@@ -16,7 +16,7 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  public title = 'angularfirebase-authentication';
+  public title = 'Vokswagen Collection';
 
   public cart: Observable<ShoppingCart> | null = null;
   public cartItems: CartItem[] = [];
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public routeFound: boolean = false;
   private _event$;
   private _routes;
-  public isLoading: boolean =  false;
+
   constructor(
     private _cartService: CartService,
     private _router: Router,
@@ -39,7 +39,6 @@ export class AppComponent implements OnInit, OnDestroy {
       .filter((route) => route != '**');
     this._event$ = this._router.events.subscribe((event: NavigationEvent) => {
       if (event instanceof NavigationEnd) {
-        console.log(event.url);
         let url = event.url.split('/')[1];
         this._routes.filter((route) => {
           if (route!.split('/')[0] == url) {
@@ -51,18 +50,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-
-    this.isLoading = true;
-    setTimeout(()=>{
       this.cart = this._cartService.get();
       this._cartSubscription = this.cart.subscribe((cart) => {
         this.itemCount = cart.items
           .map((x) => x.quantity)
           .reduce((p, n) => p + n, 0);
+    });
 
-      this.isLoading = false;
-      });
-    }, 2000)
   }
   public ngOnDestroy(): void {
     if (this._cartSubscription) {

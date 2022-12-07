@@ -50,7 +50,7 @@ export class CartService {
     }
 
     item.quantity += quantity;
-
+    console.log(cart,'CART');
     this.calculateCart(cart);
     this.save(cart);
     this.dispatch(cart);

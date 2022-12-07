@@ -1,0 +1,141 @@
+.card-detail-container{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.card-detail-image{
+  width: 50%;
+  display: flex;
+  align-content: center;
+}
+.card-detail-info{
+  width: 100%;
+  padding: 1rem;
+}
+.card-detail-title{
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: "VW Head Bold";
+}
+.card-review-rating {
+  margin: 1rem 0 0 0;
+}
+.avg-rating {
+  font-size: 2rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: 2px solid #191545;
+  margin: .25rem;
+  font-family: "VW Head Bold";
+}
+.card-review-text {
+  margin: .25rem;
+  font-size: .8rem;
+  font-family: "VW Head Regular";
+}
+.card-item-image{
+  width: 55%;
+  height: auto;
+  margin: 0 auto;
+  display:block;
+  min-height: 190px;
+}
+.card-detail-descr{
+  margin:.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e3e3e3;
+  min-height: 200px;
+}
+.card-detail-subtext{
+  vertical-align: middle;
+  font-family:'VW Head Bold';
+  color: #fe4e13;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+.card-detail-price{
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family:'VW Head Bold';
+  margin: .5rem 0;
+}
+
+.card-item-button{
+  display: block;
+  width:100%;
+  background-color: #191545;
+  color: #FFFFFF;
+  padding: .75rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor:pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+
+}
+
+.card-item-button:hover{
+  display: block;
+  width:100%;
+  background-color: #6091C3;
+  color: #FFFFFF;
+  padding: .75rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor:pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+.card-view-block {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem 0;
+  color: #fe4e13;
+}
+.card-nav{
+  margin: 1.5rem 0;
+}
+@media (min-width: 600px) {
+  .card-detail-container{
+    flex-direction: row;
+  }
+  .card-detail-info{
+    width: 100%;
+    border-left: 1px solid #e3e3e3;
+    min-height: 50vh;
+
+  }
+  .card-detail-image{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  .card-detail-descr{
+    margin:1rem 0;
+    padding: 1.5rem 0;
+  }
+}
+
+.spinner{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 8rem auto;
+}
