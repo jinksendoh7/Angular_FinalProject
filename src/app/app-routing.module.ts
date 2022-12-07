@@ -15,23 +15,23 @@ const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  { 
-    path: 'dashboard', 
+  {
+    path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
-  { 
-    path: 'products', 
+  {
+    path: 'products',
     component: ProductsListComponent,
     canActivate: [AuthGuard]
   },
-  { 
-    path: 'products/:productId/:argument2', 
+  {
+    path: 'products/:productId/:argument2',
     component: ProductDetailsComponent,
     canActivate: [AuthGuard]
   },
-  { 
-    path: 'cart', 
+  {
+    path: 'cart',
     component: ShoppingCartComponent,
     canActivate: [AuthGuard]
   },

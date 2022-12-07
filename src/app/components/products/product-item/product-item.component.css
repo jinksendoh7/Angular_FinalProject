@@ -1,33 +1,73 @@
-.product-card {
-  margin-bottom: 5px;
-  margin-top: 5px;
-  font-size: 10px;
-  max-width: 200px;
-  min-height: 200px;
-}
+@font-face {
+  font-family: 'VW Head Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VW Text Regular'), url('../../../..//assets/fonts/VWTextRegular.woff') format('woff');
+  }
 
-.product-card-image {
-  max-width: 100%;
-  height: 200px;
-}
+.card-item {
+  border: 1px solid #e3e3e3;
+  margin: .5rem;
+  border-radius: .5rem;
+  padding: 0 .5rem 1rem  .5rem;
 
-.product-description {
-  width: 100%;
-}
 
-.product-rate {
-  font-weight: bolder;
-  color: yellow;
 }
-
-.product-price {
-  font-weight: bolder;
-  font-size: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+.card-item:hover{
+  cursor:pointer;
+  color: #191545;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 .5rem 1rem;
 }
 
 
+.card-item-image{
+  width: 55%;
+  height: auto;
+  margin: 0 auto;
+  display:block;
+}
+.card-item-title{
+  font-size: 1.15rem;
+  padding: 1rem .5rem .5rem .5rem;
+  text-align:center;
+  display:block;
+  border-top: 1px solid #e3e3e3;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.card-item-sub{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: .5rem;
+}
+.card-item-price{
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#6091C3;
+  text-align: center;
+}
+.card-item-shipping-cost{
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fe4e13
+}
+.card-item-button{
+  display: block;
+  width:100%;
+  background-color: #191545;
+  color: #FFFFFF;
+  padding: .75rem;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor:pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+
+}

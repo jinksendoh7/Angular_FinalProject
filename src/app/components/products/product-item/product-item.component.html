@@ -1,21 +1,9 @@
-  <mat-card fxLayout="row" fxLayoutAlign="space-around center" class="product-card" *ngIf="product">
-    <img
-      class="product-card-image"
-      mat-card-image
-      src="{{ product.pictureUrl }}"
-    />
-    <mat-card-content class="product-description">
-      <a
-        [title]="product.name + ' details'"
-        [routerLink]="['/products', product.id]"
-      >
-        {{ product.name.substring(0, 100) }}...
-      </a>
-    </mat-card-content>
-    <mat-card-content class="product-rate">
-      {{ product.rate }}
-    </mat-card-content>
-    <mat-card-content class="product-price">
-      ${{ product.price }}
-    </mat-card-content>
-  </mat-card>
+<div class="card-item" *ngIf="product"  matRipple>
+  <img src="{{product.pictureUrl }}"  mat-card-image class="card-item-image">
+  <div class="card-item-title">{{product.name}}</div>
+  <div class="card-item-sub">
+    <span class="card-item-price">{{product.price | currency}}</span>
+    <span class="card-item-shipping-cost">+ Shipping Cost</span>
+  </div>
+  <button class="card-item-button">Add to Cart</button>
+</div>
