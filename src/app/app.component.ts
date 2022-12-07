@@ -27,9 +27,9 @@ export class AppComponent implements OnInit, OnDestroy {
   public routeFound: boolean = false;
   private _event$;
   private _routes;
-
+  public isLoading: boolean =  false;
   constructor(
-    private _cartService: CartService, 
+    private _cartService: CartService,
     private _router: Router,
     public authService: AuthService
   ) {
@@ -51,14 +51,19 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.cart = this._cartService.get();
-    this._cartSubscription = this.cart.subscribe((cart) => {
-      this.itemCount = cart.items
-        .map((x) => x.quantity)
-        .reduce((p, n) => p + n, 0);
-    });
-  }
 
+    this.isLoading = true;
+    setTimeout(()=>{
+      this.cart = this._cartService.get();
+      this._cartSubscription = this.cart.subscribe((cart) => {
+        this.itemCount = cart.items
+          .map((x) => x.quantity)
+          .reduce((p, n) => p + n, 0);
+
+      this.isLoading = false;
+      });
+    }, 2000)
+  }
   public ngOnDestroy(): void {
     if (this._cartSubscription) {
       this._cartSubscription.unsubscribe();

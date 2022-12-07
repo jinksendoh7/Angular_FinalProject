@@ -1,6 +1,8 @@
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content:flex-start;
-  gap: 10px;
+
+.cards {
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+
 }

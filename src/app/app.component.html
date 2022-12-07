@@ -6,10 +6,13 @@
     </span>
     <span class="company">Volkswagen</span>
     <span class="spacer"></span>
+    <img  src="../assets/images/cad.png" alt="Currency" class="image-currency" id="image-currency"/>
+    <span class="cad">CAD</span>
 </mat-toolbar-row>
 <mat-toolbar-row>
   <div>
-    <img src="../assets/images/VW_Collections_Logo.gif" alt="store Logo" class="logo">
+    <a routerLink="products">
+    <img src="../assets/images/VW_Collections_Logo.gif" alt="store Logo" class="logo"></a>
   </div>
   <span class="spacer"></span>
   <button
@@ -26,7 +29,7 @@
       >shopping_cart
     </mat-icon>
     </button>
-  <button
+ <!-- <button
     mat-icon-button
     [matMenuTriggerFor] ="menu"
     aria-label="More Options"
@@ -35,7 +38,7 @@
   </button>
   <mat-menu
     #menu="matMenu">
-    <!-- Private routes -->
+
     <div *ngIf="authService.isLoggedIn">
       <a mat-menu-item routerLink="dashboard">
         <mat-icon>home</mat-icon>
@@ -54,7 +57,7 @@
         <span>Logout</span>
       </a>
     </div>
-    <!-- Non authenticated routes -->
+
     <div *ngIf="!authService.isLoggedIn">
       <a mat-menu-item routerLink="sign-in">
         <mat-icon>login</mat-icon>
@@ -71,8 +74,12 @@
     </div>
 
   </mat-menu>
+-->
 </mat-toolbar-row>
 </mat-toolbar>
-<div class="container">
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="container" *ngIf="!isLoading">
   <router-outlet></router-outlet>
 </div>

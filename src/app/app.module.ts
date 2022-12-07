@@ -34,7 +34,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import {MatRippleModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     MatBadgeModule,
     MatSnackBarModule,
+    MatRippleModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
   providers: [AuthService, AuthGuard, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]

@@ -7,7 +7,8 @@ import { Product } from '../../../shared/models/product';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {}
 
