@@ -27,7 +27,7 @@
   <span class="cart-label">Shopping Cart</span>
     <span class="badge" *ngIf="itemCount > 0">{{itemCount}}</span>
 </button>
-<button mat-raised-button color="warn" *ngIf="authService.isLoggedIn" (click)="onSignOut()">
+<button mat-raised-button color="warn" *ngIf="authService.isLoggedIn" (click)="onSignOut()" style="margin-left: .5rem;">
   <mat-icon>logout</mat-icon>
   <span>Logout</span>
 </button>

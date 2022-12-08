@@ -39,6 +39,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatChipsModule} from '@angular/material/chips';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatRippleModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule
 
   ],
   providers: [AuthService, AuthGuard, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
