@@ -12,7 +12,7 @@ import { ProductDetailsComponent } from './components/products/product-details/p
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   {

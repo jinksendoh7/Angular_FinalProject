@@ -14,7 +14,7 @@
   padding: 1rem 0;
 }
 .card-filter-item{
-  border: 1.5px solid   #6091C3;
+  border: 1.5px solid  #191545;
   background-color: #f7f7f7;
   padding: 10px;
   margin: .25rem;
@@ -25,8 +25,8 @@
 }
 
 .card-filter-item:hover, .card-filter-item-active{
-  border: 1.5px solid   #6091C3;
-  background-color:  #6091C3;
+  border: 1.5px solid   #191545;
+  background-color:  #191545;;
   color: #FFFFFF;
   padding: 10px;
   margin: .25rem;

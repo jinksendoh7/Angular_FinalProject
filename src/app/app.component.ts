@@ -48,7 +48,9 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     });
   }
-
+  onSignOut(){
+    this.authService.SignOut();
+  }
   public ngOnInit(): void {
       this.cart = this._cartService.get();
       this._cartSubscription = this.cart.subscribe((cart) => {

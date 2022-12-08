@@ -108,16 +108,25 @@ mat-toolbar{
   height: 7rem;
   z-index: 1;
 }
+
+.badge{
+  background-color: #fe4e13;
+  color: #FFF;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-left: .5rem;
+
+}
 @media (min-width: 600px) {
   mat-toolbar-row, .mat-toolbar-single-row {
-    padding: 0 20% !important;
+    padding: 0 15% !important;
   }
   .container{
-    margin: 8rem 20%;
+    margin: 8rem 15%;
 
   }
   .topbar{
-    padding:0 25%;
+    padding:0 15%;
 
   }
   .cart-label{

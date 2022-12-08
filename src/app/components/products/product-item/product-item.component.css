@@ -53,7 +53,8 @@
 .card-item-shipping-cost{
   vertical-align: middle;
   font-family:'VW Head Bold';
-  color: #fe4e13
+  color: #fe4e13;
+  margin-left: .5rem;
 }
 .card-item-button{
   display: block;

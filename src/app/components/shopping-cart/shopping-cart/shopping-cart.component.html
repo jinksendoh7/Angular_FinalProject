@@ -1,66 +1,73 @@
-<div class="row">
-  <div class="small-12 columns">
-    <h3>
-      <i class="material-icons">shopping_cart</i>
-      Your Shopping Cart
-    </h3>
+<div class="card-nav">
+  <button mat-button [routerLink]="['/products']"><mat-icon>keyboard_backspace</mat-icon> Back</button>
+</div>
+
+
+<div class="cart-container" *ngIf="cartItems.length > 0">
+  <div class="cart-checkout-items" >
+    <h3> Your Shopping Cart ({{cartItems.length}})</h3>
+    <div *ngFor="let product of cartItems" >
+        <div *ngIf="product" class="cart-item">
+          <img src="{{product.pictureUrl }}"  mat-card-image class="cart-item-image">
+          <div class="cart-item-info">
+            <div class="text">{{product.name}}</div>
+            <div class="small-text">{{product.description.substring(0,100)}}..</div>
+            <div class="md-text">Unit Price: {{product.price | currency}}</div>
+            <div class="flex-row">
+              <div class="cart-qty">{{product.quantity}}</div>
+            </div>
+            <div class="card-view-block">
+              <img src="../../../../assets/images/bag.svg" alt="Items Left" >
+              <span> Only {{product.itemLeftQty}} left!</span>
+           </div>
+          </div>
+          <div class="flex-col">
+            <h3 class="text-price">{{product.price * product.quantity | currency}}</h3>
+            <button class="card-item-button" (click)="addToCart(product)">Add 1 item</button>
+            <button class="card-item-view" (click)="removeToCart(product.id)">Remove</button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="cart-checkout-container">
+      <div class="cart-totals">
+          <h3 class="cart-totals-title"> Cart Summary ({{itemCount}})</h3>
+          <div class="flex-row">
+            <div class="text">Cart Total:</div>
+            <div class="spacer"></div>
+            <div class="text"><b>{{grossTotal.toFixed(2) | currency}}</b></div>
+          </div>
+          <div class="flex-row">
+            <div style="margin-left: 1rem; color:#fe4e13;">+Shipping Cost:</div>
+            <div class="spacer"></div>
+            <div style="color:#fe4e13;"><b>$8.99 </b></div>
+          </div>
+          <div class="flex-row" style="margin-top:.5rem; border-top:1px dotted #A8A8A8; padding-top: .5rem">
+            <div class="text">Sub-Total:</div>
+            <div class="spacer"></div>
+            <div class="text"><b>{{(grossTotal + 8.99).toFixed(2) | currency}}</b></div>
+          </div>
+          <div class="flex-row">
+            <div style="margin-left: 1rem; color:#fe4e13;">+Tax (13%):</div>
+            <div class="spacer"></div>
+            <div style="color:#fe4e13;"><b>{{(((grossTotal + 8.99)* 13 / 100)).toFixed(2)}}</b></div>
+          </div>
+
+          <div class="flex-row total" style="margin:1rem 0 !important; padding:1rem; border-top: 2px solid #191545;">
+            <div class="text"><b>Total</b></div>
+            <div class="spacer"></div>
+            <div class="text"><b>{{((((grossTotal + 8.99)* 13 / 100)) + grossTotal).toFixed(2) | currency}}</b></div>
+          </div>
+      </div>
+
   </div>
 </div>
-<br />
-<div class="row">
-  <div class="small-12 columns">
-    <h5>
-      Sub Total ({{ itemCount }} items):
-      <span class="text--red text--bold js-cart-total">
-        {{ (cart | async)!.itemsTotal | currency: 'CAD':true }}</span>
-    </h5>
-  </div>
-</div>
-<div class="row" *ngFor="let product of cartItems">
-  <mat-card class="product-card" *ngIf="product">
-    <img
-      class="product-card-image"
-      mat-card-image
-      src="{{ product.pictureUrl }}"
-    />
-    <mat-card-content class="product-description">
-      <a
-        [title]="product.name + ' details'"
-        [routerLink]="['/products', product.id]"
-      >
-        {{ product.name.substring(0, 100) }}...
-      </a>
-    </mat-card-content>
-    <mat-card-content class="product-rate">
-      {{ product.rate }}
-    </mat-card-content>
-    <mat-card-content class="product-price">
-      ${{ product.price }}
-    </mat-card-content>
-  </mat-card>
-</div>
-<br />
-<div class="row">
-  <div class="small-12 columns">
-    <button
-      type="button"
-      class="success button large expanded"
-      [attr.disabled]="itemCount === 0 ? true : null"
-      routerLink="/checkout"
-    >
-      Proceed To Checkout
-    </button>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 columns">
-    <button
-      type="button"
-      class="secondary button small expanded js-btn-empty-cart"
-      (click)="emptyCart()"
-      [attr.disabled]="itemCount === 0 ? true : null"
-    >
-      Empty shopping cart
-    </button>
+
+
+<div class="cart-container" *ngIf="cartItems.length === 0">
+  <div class="empty-cart">
+    <img src="../../../../assets/images/empty-box.png" alt="empty box" class="empty-img" >
+    <h3>Your shopping is cart is empty.</h3>
+    <a class="card-item-button" routerLink="/" style="margin: 2rem auto;">Continue Shopping</a>
   </div>
 </div>

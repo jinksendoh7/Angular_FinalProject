@@ -17,17 +17,26 @@
   <span class="spacer"></span>
   <button
     mat-flat-button
-    *ngIf="authService.isLoggedIn"
     aria-label="Shopping Cart Icon"
     routerLink="cart"
     class="cart"
-
   >
+  <mat-icon matBadgeColor="warn" style="padding-top: .25rem"
+  >shopping_cart
+</mat-icon>
   <span class="cart-label">Shopping Cart</span>
-    <mat-icon matBadge="{{ itemCount }}" matBadgeColor="warn" style="padding-top: .25rem"
-      >shopping_cart
-    </mat-icon>
-    </button>
+    <span class="badge" *ngIf="itemCount > 0">{{itemCount}}</span>
+</button>
+<button mat-raised-button color="warn" *ngIf="authService.isLoggedIn" (click)="onSignOut()">
+  <mat-icon>logout</mat-icon>
+  <span>Logout</span>
+</button>
+<div *ngIf="!authService.isLoggedIn">
+  <a mat-raised-button color="warn" routerLink="sign-in" style="margin-left: .5rem;">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </a>
+</div>
  <!-- <button
     mat-icon-button
     [matMenuTriggerFor] ="menu"
