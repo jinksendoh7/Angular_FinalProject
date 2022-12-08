@@ -23,12 +23,11 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsListComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'products/:productId/:argument2',
     component: ProductDetailsComponent,
-    canActivate: [AuthGuard]
+
   },
   {
     path: 'cart',
