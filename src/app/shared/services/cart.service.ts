@@ -40,20 +40,45 @@ export class CartService {
     return this._subscriptionObservable;
   }
 
-  public addItem(product: Product, quantity: number): void {
+  public removeItem(productId:string): string{
     const cart = this.retrieve();
-    let item = cart.items.find((p) => p.productId === product.id);
-    if (item === undefined) {
-      item = new CartItem();
-      item.productId = product.id;
-      cart.items.push(item);
-    }
 
-    item.quantity += quantity;
-    console.log(cart,'CART');
+    let item = cart.items.filter((p) => p.productId !== productId);
+    cart.items = item;
+
+    let message = 'The item was removed in your shopping cart.';
+
+
     this.calculateCart(cart);
     this.save(cart);
     this.dispatch(cart);
+    return message;
+  }
+  public addItem(product: Product, quantity: number): string {
+    const cart = this.retrieve();
+    let item = cart.items.find((p) => p.productId === product.id);
+    let message = 'Item added in your shopping cart.';
+    if (item === undefined) {
+      item = new CartItem();
+      item.productId = product.id;
+      item.name = product.name;
+      item.pictureUrl = product.pictureUrl;
+      item.description = product.description;
+      item.itemLeftQty = product.quantity-1;
+      item.price = product.price;
+
+      cart.items.push(item);
+
+
+    }
+    console.log(cart.items);
+
+    item.quantity += quantity;
+
+    this.calculateCart(cart);
+    this.save(cart);
+    this.dispatch(cart);
+    return message;
   }
 
   public empty(): void {
@@ -63,6 +88,7 @@ export class CartService {
   }
 
   private calculateCart(cart: ShoppingCart): void {
+    console.log(cart,'<<');
     cart.itemsTotal = cart.items
       .map(
         (item) =>
@@ -70,7 +96,7 @@ export class CartService {
           this._products.find((p) => p.id === item.productId)!.price
       )
       .reduce((previous, current) => previous + current, 0);
-    console.log('grossTotal', cart.itemsTotal);
+;
   }
 
   private retrieve(): ShoppingCart {

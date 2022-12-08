@@ -129,6 +129,7 @@ export class AuthService {
   }
   // Sign out
   SignOut() {
+
     return this.afAuth.signOut().then(() => {
       this.storage.removeItem('user');
       this._cartService.empty();

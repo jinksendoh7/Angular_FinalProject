@@ -18,8 +18,8 @@ export class ProductItemComponent implements OnInit {
   @Input() product: Product | null = null;
 
   addToCart(product: Product) {
-    this._snackBar.open('Items added in your cart', 'OK');
-    this._cartService.addItem(product, 1);
+    const message = this._cartService.addItem(product, 1);
+    this._snackBar.open(message, 'OK');
   }
   ngOnInit() {}
 

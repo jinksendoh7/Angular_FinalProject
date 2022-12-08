@@ -12,7 +12,7 @@ import { ProductDetailsComponent } from './components/products/product-details/p
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   {
@@ -23,12 +23,11 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsListComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'products/:productId/:argument2',
     component: ProductDetailsComponent,
-    canActivate: [AuthGuard]
+
   },
   {
     path: 'cart',

@@ -1,31 +1,220 @@
-.product-card {
-  max-width: auto;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  font-size: 10px;
+a{
+  text-decoration: none !important;
+  text-align: center;
+}
+.cart-container{
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
-.product-card-image {
-  max-width: 100px;
-}
-
-.product-description {
+.cart-checkout-items{
   width: 100%;
+
+}
+.cart-checkout-container{
+  padding: 1rem;
+  width: 100%;
+  min-height: 200px;
+
 }
 
-.product-rate {
-  font-weight: bolder;
-  color: yellow;
+.cart-item-image{
+  width: 100%;
+  height: auto;
 }
-
-.product-price {
-  font-weight: bolder;
-  font-size: 20px;
+.cart-item{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: .5rem;
+  border:1px solid #e3e3e3;
+  margin: .5rem;
+  border-radius: .5rem;
 }
+.flex-row{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0 5px;
 
-a {
-  text-decoration: none;
-  color: inherit;
+
+}
+.cart-item-info{
+  margin: 1rem;
+  font-size: 1.2rem;
+
+}
+.text{
+  color:  #191545;
+  margin-bottom: .5rem;
+
+}
+.cart-qty{
+  padding: 5px;
+  border: 1px solid #191545;
+  border-radius: 8px;
+  width: 50px;
+  text-align: center;
+  margin-top:.5rem;
+
+}
+.card-item-button{
+  display: block;
+  background-color: #191545;
+  color: #FFFFFF;
+padding: .5rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1rem;
+  cursor:pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid #191545;
+}
+.card-item-button:hover{
+  display: block;
+  background-color: #6091C3;
+  color: #FFFFFF;
+padding: .5rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1rem;
+  cursor:pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid #6091C3;
+}
+.card-detail-subtext{
+  vertical-align: middle;
+  font-family:'VW Head Bold';
+  color: #fe4e13;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+.card-item-view{
+  display: block;
+  background-color: #fe4e13;
+  color: #fff;
+padding: .5rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1rem;
+  cursor:pointer;
+  margin-top: .5rem;
+  border-radius: 5px;
+  border: 1px solid #fe4e13;
+}
+.md-text{
+  font-size: .85rem;
+  color: #fe4e13;
+  margin:.5rem 0;
+}
+.text-price{
+  font-size:1.5rem;
+}
+.total{
+  padding: .5rem 0;
+  font-size: 1.2rem;
+}
+.card-item-view:hover{
+  display: block;
+  background-color: #6091C3;
+  color: #FFFFFF;
+  padding: .5rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1rem;
+  cursor:pointer;
+  margin-top: .5rem;
+  border-radius: 5px;
+  border: 1px solid #6091C3;
+
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+}
+.small-text{
+  font-size: 12px;
+}
+.card-view-block {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem 0;
+  color: #fe4e13;
+}
+.cart-totals{
+  border: 1px solid #f7f7f7;
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  padding: .5rem;
+  min-height: 200px;
+
+  padding-bottom: 1.5rem;
+}
+.cart-totals-title{
+  padding: 1rem;
+  border-bottom: 1px solid #191545
+}
+.empty-cart{
+  margin: 5rem auto;
+  display:block;
+}
+.empty-img{
+  width: 100px;
+  height: auto;
+  display:block;
+  margin: 0 auto;
+}
+@media (min-width: 767px) {
+  .cart-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .cart-item{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: .5rem;
+    border:1px solid #e3e3e3;
+    margin: .5rem;
+    border-radius: .5rem;
+  }
+  .cart-checkout-items{
+    width: 70%;
+
+  }
+  .spacer{
+    flex-grow:1;
+  }
+  .cart-checkout-container{
+    padding: 1rem;
+    width: 25%;
+    min-height: 250px;
+  }
+  .cart-item-image{
+    width: 120px;
+    height: auto;
+    padding: .5rem;
+  }
+  .flex-row{
+    width: 85%;
+    padding: 0 1rem;
+  }
+  .cart-item-info{
+    width: 60%;
+  }
 }

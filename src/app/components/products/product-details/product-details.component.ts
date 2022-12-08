@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../shared/models/product';
 import { ProductsService } from '../../../shared/services/products.service';
 import { CartService } from '../../../shared/services/cart.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-details',
@@ -18,11 +19,13 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private _productsService: ProductsService,
     private _cartService: CartService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _snackBar: MatSnackBar
   ) {}
 
   addToCart(product: Product) {
-    this._cartService.addItem(product, 1);
+    const message = this._cartService.addItem(product, 1);
+    this._snackBar.open(message, 'OK');
   }
 
   ngOnInit() {
