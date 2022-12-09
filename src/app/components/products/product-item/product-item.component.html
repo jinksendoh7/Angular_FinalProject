@@ -3,7 +3,7 @@
   <div class="card-item-title" >{{product.name}}</div>
   <div class="card-item-sub">
     <span class="card-item-price">{{product.price | currency}}</span>
-    <span class="card-item-shipping-cost">   +Tax(13%)</span>
+    <span class="card-item-shipping-cost">  +Tax(13%)</span>
   </div>
   <button class="card-item-button" (click)="addToCart(product)">Add to Cart</button>
   <button class="card-item-view" [routerLink]="['/products', product.id, product.quantity]">View Detail</button>
