@@ -1,6 +1,6 @@
 <div class="card-item" *ngIf="product"  matRipple    >
   <img src="{{product.pictureUrl }}"  mat-card-image class="card-item-image">
-  <div class="card-item-title" >{{product.name}}</div>
+  <div class="card-item-title" [routerLink]="['/products', product.id, product.quantity]"> {{product.name}}</div>
   <div class="card-item-sub">
     <span class="card-item-price">{{product.price | currency}}</span>
     <span class="card-item-shipping-cost">  +Tax(13%)</span>

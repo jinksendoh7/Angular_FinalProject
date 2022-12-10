@@ -7,7 +7,7 @@
   <div class="cart-checkout-items" >
     <h3> Your Shopping Cart ({{cartItems.length}})</h3>
     <div *ngFor="let product of cartItems" >
-        <div *ngIf="product" class="cart-item">
+        <div *ngIf="product" class="cart-item"  matRipple>
           <img src="{{product.pictureUrl }}"  mat-card-image class="cart-item-image">
           <div class="cart-item-info">
             <div class="text">{{product.name}}</div>
