@@ -4,7 +4,7 @@
         <img src="../assets/images/vw-logo.png" alt="company Logo" class="company-logo">
         <h3 class="title">Sign Up Today</h3>
         <div class="formGroup">
-          <div class="container-warning">
+          <div class="container-warning" *ngIf="isError">
           The password and confirm password should match.
         </div>
         <div class="form-title">Signup Email</div>
@@ -15,16 +15,17 @@
           <input type="password" class="input-field" placeholder="password..." #userPwd required/>
         </div>
         <div class="formGroup">
+          <div class="form-title">Confirm Password</div>
         <input
           type="password"
-          class="formControl"
+          class="input-field"
           placeholder="Password"
           #confirmPwd
           required
         />
       </div>
       <div class="formGroup">
-          <button mat-raised-button class="btn-signup" type="button" value="Sign Up" (click)="onSignUp(userEmail.value, userPwd.value, confirmPwd.value)">Sign Up</button>
+          <button mat-raised-button class="btn-new" type="button" value="Sign Up" (click)="onSignUp(userEmail.value, userPwd.value, confirmPwd.value)">Sign Up</button>
         </div>
         <div class="formGroup">
           <span class="or" class="divider"><span class="orInner"> OR </span></span>

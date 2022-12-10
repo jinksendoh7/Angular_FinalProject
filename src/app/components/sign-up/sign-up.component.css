@@ -5,6 +5,11 @@
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
+    background-color: #6091C3;
+    padding: 15px;
+    color: #191545;
+    margin: 1rem 0;
+    border-radius: 5px;
 }
 .formContainer{
     width: 400;
@@ -116,3 +121,22 @@ and left sides of the text */
     margin-left: 0.25em;
   }
 
+  .btn-new{
+    color: #FFF;
+    background-color:  #fe4e13;
+    padding: 2px;
+    display: block;
+    margin: 1rem 0;
+    font-family: 'VW Head Bold';
+    width: 100%;
+    border: 1px solid  #fe4e13;
+  }
+  .btn-new:hover{
+    color:#fff;
+    background-color: #191545;
+    border: 1px solid  #191545;;
+  }
+.redirect{
+    cursor: pointer;
+    color:#fe4e13;
+}

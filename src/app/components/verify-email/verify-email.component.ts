@@ -9,6 +9,15 @@ export class VerifyEmailComponent implements OnInit {
   constructor(
     public authService: AuthService
   ) { }
+  isLoading: boolean = false;
   ngOnInit() {
+  }
+  onSendVerify(){
+    this.isLoading = true;
+    setTimeout(()=>{
+      this.authService.SendVerificationMail();
+      this.isLoading = false;
+    },1000)
+
   }
 }
