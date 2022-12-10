@@ -25,7 +25,9 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product: Product) {
     const message = this._cartService.addItem(product, 1);
-    this._snackBar.open(message, 'OK');
+    this._snackBar.open(message, 'OK', {
+      duration: 5000
+    });
   }
 
   ngOnInit() {

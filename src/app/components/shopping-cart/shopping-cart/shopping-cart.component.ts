@@ -44,7 +44,9 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
   removeToCart(productId: string){
     const message = this._cartService.removeItem(productId);
-    this._snackBar.open(message, 'OK');
+    this._snackBar.open(message, 'OK',{
+      duration: 5000
+    });
   }
 
   public ngOnInit(): void {
