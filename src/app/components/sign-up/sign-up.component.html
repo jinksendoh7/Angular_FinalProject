@@ -3,6 +3,9 @@
     <div class="authBlock">
       <h3>Sign Up</h3>
       <div class="formGroup">
+        <div class="container-warning">
+          The password and confirm password should match.
+        </div>
         <input
           type="email"
           class="formControl"
@@ -22,10 +25,19 @@
       </div>
       <div class="formGroup">
         <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #confirmPwd
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
           type="button"
           class="btn btnPrimary"
           value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          (click)="onSignUp(userEmail.value, userPwd.value, confirmPwd.value)"
         />
       </div>
       <div class="formGroup">

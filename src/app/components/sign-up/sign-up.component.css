@@ -1,0 +1,7 @@
+.container-warning{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+}
