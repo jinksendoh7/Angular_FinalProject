@@ -6,8 +6,18 @@ import { AuthService } from "../../shared/services/auth.service";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+  isError: boolean = false;
   constructor(
     public authService: AuthService
   ) { }
   ngOnInit() { }
+
+  onSignUp(email: string, password: string, confirm:string ): void{
+    if(password === confirm){
+       this.authService.SignUp(email, password)
+    }
+    else{
+      this.isError = true;
+    }
+  }
 }

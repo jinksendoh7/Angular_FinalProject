@@ -89,6 +89,7 @@ padding: .5rem;
   margin-top: 1rem;
   border-radius: 5px;
   border: 1px solid #6091C3;
+
 }
 .card-detail-subtext{
   vertical-align: middle;
@@ -110,6 +111,21 @@ padding: .5rem;
   margin-top: .5rem;
   border-radius: 5px;
   border: 1px solid #fe4e13;
+}
+.card-item-checkout{
+  display: block;
+  background-color: #191545;
+  color: #fff;
+  padding: .5rem;
+  border: 0;
+  font-family:'VW Head Bold';
+  font-weight: bold;
+  font-size: 1rem;
+  cursor:pointer;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 80%;
+  border: 1px solid #191545;
 }
 .md-text{
   font-size: .85rem;
