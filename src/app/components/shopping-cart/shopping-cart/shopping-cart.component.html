@@ -18,12 +18,13 @@
             </div>
             <div class="card-view-block">
               <img src="../../../../assets/images/bag.svg" alt="Items Left" >
-              <span> Only {{product.itemLeftQty}} left!</span>
+              <span  *ngIf="product.itemLeftQty >0"> Only {{product.itemLeftQty}} left!</span>
+              <span  *ngIf="product.itemLeftQty <=0">  SOLD OUT!</span>
            </div>
           </div>
           <div class="flex-col">
             <h3 class="text-price">{{product.price * product.quantity | currency}}</h3>
-            <button class="card-item-button" (click)="addToCart(product.productData)">Add 1 item</button>
+            <button class="card-item-button" (click)="addToCart(product.productData)"  [disabled]="product.itemLeftQty <=0">Add 1 item</button>
             <button class="card-item-view" (click)="removeToCart(product.id, product.quantity)">Remove</button>
           </div>
         </div>
