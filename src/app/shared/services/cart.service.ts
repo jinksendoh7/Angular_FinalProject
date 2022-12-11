@@ -62,7 +62,10 @@ export class CartService {
   }
   public addItem(product: Product, quantity: number): string {
     const cart = this.retrieve();
+
     let item = cart.items.find((p) => p.productId === product.id);
+    let current = this._products.find((p) => p.id ===product.id);
+    const currQty = current?.quantity || 0;
 
     if (item === undefined) {
       item = new CartItem();
@@ -72,14 +75,17 @@ export class CartService {
       item.pictureUrl = product.pictureUrl;
       item.description = product.description;
       item.price = product.price;
+      item.itemLeftQty = currQty - 1
       cart.items.push(item);
-      item.itemLeftQty = product.quantity - 1
+
     }
     else{
-      item.itemLeftQty = product.quantity- 1
+      item.itemLeftQty = currQty- 1
     }
-
-    this._productService.updateQuantity(product, product.quantity - quantity);
+    console.log(current, "CURRENt")
+    if(current){
+      this._productService.updateQuantity(current, item.itemLeftQty)
+   }
 
     item.quantity += quantity;
     let message = 'Item added in your shopping cart.';

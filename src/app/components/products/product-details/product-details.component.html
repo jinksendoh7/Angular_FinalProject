@@ -27,13 +27,14 @@
         <div class="card-detail-subtext">+ Tax (13%)</div>
         <div class="card-view-block">
           <img src="../../../../assets/images/bag.svg" alt="Items Left" >
-          <span> Only {{product.quantity}} left!</span>
+          <span  *ngIf="product.quantity >0"> Only {{product.quantity}} left!</span>
+          <span  *ngIf="product.quantity <=0">  SOLD OUT!</span>
       </div>
         <div class="card-detail-descr">{{product.description}}</div>
         <div class="card-detail-rating">
 
         </div>
-        <button class="card-item-button"  (click)="addToCart(product)">Add to Cart</button>
+        <button class="card-item-button"  (click)="addToCart(product)" [disabled]="product.quantity <=0">Add to Cart</button>
   </div>
 </div>
 

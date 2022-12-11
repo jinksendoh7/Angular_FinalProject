@@ -7,8 +7,9 @@
   </div>
   <div class="card-view-block">
     <img src="../../../../assets/images/bag.svg" alt="Items Left" >
-    <span> Only {{product.quantity}} left!</span>
+    <span  *ngIf="product.quantity >0"> Only {{product.quantity}} left!</span>
+    <span  *ngIf="product.quantity <=0">  SOLD OUT!</span>
 </div>
-  <button class="card-item-button" (click)="addToCart(product)">Add to Cart</button>
+  <button class="card-item-button" (click)="addToCart(product)" [disabled]="product.quantity <=0" >Add to Cart</button>
   <button class="card-item-view" [routerLink]="['/products', product.id, product.quantity]">View Detail</button>
 </div>
