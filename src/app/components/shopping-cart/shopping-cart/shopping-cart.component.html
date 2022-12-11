@@ -23,8 +23,8 @@
           </div>
           <div class="flex-col">
             <h3 class="text-price">{{product.price * product.quantity | currency}}</h3>
-            <button class="card-item-button" (click)="addToCart(product)">Add 1 item</button>
-            <button class="card-item-view" (click)="removeToCart(product.id)">Remove</button>
+            <button class="card-item-button" (click)="addToCart(product.productData)">Add 1 item</button>
+            <button class="card-item-view" (click)="removeToCart(product.id, product.quantity)">Remove</button>
           </div>
         </div>
     </div>

@@ -42,8 +42,8 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     const message = this._cartService.addItem(product, 1);
     this._snackBar.open(message, 'OK');
   }
-  removeToCart(productId: string){
-    const message = this._cartService.removeItem(productId);
+  removeToCart(productId: string, qty: number){
+    const message = this._cartService.removeItem(productId, qty);
     this._snackBar.open(message, 'OK',{
       duration: 5000
     });
