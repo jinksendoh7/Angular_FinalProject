@@ -6,6 +6,7 @@ import { ProductsService } from './products.service';
 import { CartItem } from '../models/cart-item';
 import { LocalStorageService } from './storage.service';
 
+
 const CART_KEY = 'cart';
 
 @Injectable({
@@ -19,7 +20,7 @@ export class CartService {
 
   constructor(
     private _productService: ProductsService,
-    private _storageService: LocalStorageService
+    private _storageService: LocalStorageService,
   ) {
     this._storage = this._storageService.get();
       this._productService.getProducts().subscribe((products) => this._products = products);
@@ -36,6 +37,8 @@ export class CartService {
     );
   }
 
+
+
   public get(): Observable<ShoppingCart> {
     return this._subscriptionObservable;
   }
@@ -47,7 +50,6 @@ export class CartService {
     cart.items = item;
 
     let message = 'The item was removed in your shopping cart.';
-
 
     this.calculateCart(cart);
     this.save(cart);
@@ -66,12 +68,10 @@ export class CartService {
       item.description = product.description;
       item.itemLeftQty = product.quantity-1;
       item.price = product.price;
-
       cart.items.push(item);
 
-
     }
-    console.log(cart.items);
+    this._productService.updateQuantity(product, product.quantity - 1);
 
     item.quantity += quantity;
 
@@ -111,6 +111,7 @@ export class CartService {
   private save(cart: ShoppingCart): void {
     this._storage.setItem(CART_KEY, JSON.stringify(cart));
   }
+
 
   private dispatch(cart: ShoppingCart): void {
     this._subscribers.forEach((sub) => {

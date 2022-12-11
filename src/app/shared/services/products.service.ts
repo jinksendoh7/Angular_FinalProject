@@ -20,4 +20,12 @@ export class ProductsService {
   getProducts() : Observable<Product[]> {
     return this.products;
   }
+
+  updateQuantity(product: Product, qtyLeft: number): void{
+    console.log('INNNN')
+    product.quantity = qtyLeft;
+    console.log(product.id, qtyLeft,'QTY');
+    this.store.collection('Products').doc(product.id).update(product);
+
+  }
 }

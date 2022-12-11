@@ -117,7 +117,20 @@ mat-toolbar{
   margin-left: .5rem;
 
 }
-@media (min-width: 600px) {
+@media (max-width: 768px) {
+  mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 5% !important;
+  }
+  .container{
+    margin: 8rem 5%;
+
+  }
+  .topbar{
+    padding:0 5%;
+
+  }
+}
+@media (min-width: 1200px) {
   mat-toolbar-row, .mat-toolbar-single-row {
     padding: 0 15% !important;
   }
